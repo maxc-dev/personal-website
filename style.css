@@ -104,15 +104,6 @@ li a:hover {
   background-color: rgb(02,140,238);
 }
 
-@media only screen and (max-width: 768px) {
-   .card {
-      margin-left:0 !important;
-      margin-right:0 !important;
-      padding-left:0 !important;
-      padding-right:0 !important;
-   }
-}
-
 .card {
   margin-top: 20px;
   background-color: rgb(33,33,33);
@@ -125,6 +116,12 @@ li a:hover {
   border-radius: 5px;
   padding-bottom: 20px;
   padding-top: 1px;
+}
+
+@media only screen and (max-width: 700px) {
+   .card {
+     width: 100%;
+   }
 }
 
 img {
