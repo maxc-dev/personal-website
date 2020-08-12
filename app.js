@@ -57,24 +57,30 @@ function printProjects() {
   qualifications
 */
 class Qualification {
-  constructor(title, datestart, datefinish, qualificationList) {
+  constructor(title, datestart, datefinish, qualificationList, overall) {
     this.title = title;
     this.datestart = datestart;
     this.datefinish = datefinish;
     this.qualificationList = qualificationList;
+    if (typeof overall == "undefined") {
+      this.overall = "";
+    } else {
+      this.overall = "<h4>" + overall + "</h4>";
+    }
   }
 
   show() {
     return "<div class=\"card\">" +
       "<h3>" + this.title + "</h3>" +
       "<div class=\"card-container\">" +
+      this.overall +
       "<p class=\"exp\">Qualifications: </p><p class=\"explist\">  » " + this.qualificationList.join("</p><p class=\"explist\">  » ") +
       "</p><p class=\"sub\">" + this.datestart + " - " + this.datefinish + "</p><hr><br></div></div>";
   }
 }
 
 function printQualifications() {
-  uos1 = new Qualification("University of Surrey - Year 1", "September 2019", "June 2020", ["Programming Fundamentals: 1st", "Computer Logic: 1st", "Web & Database Systems: 1st", "Foundations of Computing: 2:1", "Software Development: 1st"]);
+  uos1 = new Qualification("University of Surrey - Year 1", "September 2019", "June 2020", ["Programming Fundamentals: 1st", "Computer Logic: 1st", "Web & Database Systems: 1st", "Foundations of Computing: 2:1", "Software Development: 1st", "Operating Systems: 1st", "Foundations of Computing II: 1st", "Data Structures & Algorithms: 1st"], "Year 1 Average: 85%");
 
   reigate = new Qualification("Reigate College", "September 2017", "June 2019", ["Computer Science: A", "Mathematics: B", "Economics: B"]);
 
@@ -85,8 +91,9 @@ function printQualifications() {
   Basically going to print out lots of work experience stuff
 */
 class Experience {
-  constructor(title, datestart, datefinish, description) {
+  constructor(title, company, datestart, datefinish, description) {
     this.title = title;
+    this.company = company;
     this.datestart = datestart;
     this.datefinish = datefinish;
     this.description = description;
@@ -96,15 +103,16 @@ class Experience {
     return "<div class=\"card\">" +
       "<h3>" + this.title + "</h3>" +
       "<div class=\"card-container\">" +
+      "<h4>" + this.company + "</h4>" +
       "</p><p class=\"explist\">" + this.description +
       "</p><p class=\"sub\">" + this.datestart + " - " + this.datefinish + "</p><hr><br></div></div>";
   }
 }
 
 function printExperience() {
-  intergreat = new Experience("InterGreat Education Group", "July 2020", "Ongoing", "I create and present resources over a webinar for international students that want to learn how to code in English.");
-  campusmate = new Experience("CampusMate", "June 2020", "Ongoing", "I provide one-to-one Computer Science tutoring at GCSE & A-Level standard. I enjoy this position because it actually helps me to recap topics which I haven't studied in a while. At the same time I am able to help other students to boost their academic success within this field.");
-  bloc = new Experience("Bloc Hotels", "September 2018", "November 2018", "Using Android (Java) and speech recognition technology, I developed an application that allowed users to control air conditioning, blinds and the lights in their rooms. This project was a great experience as I was able to use new technology to develop a unique system that has never been created before.");
+  intergreat = new Experience("Computer Science Webinar Presenter", "InterGreat Education Group", "July 2020", "Ongoing", "I create and present resources over a webinar for international students (UK & China) that want to learn how to code in English. This role has given me skills in public speaking, improvisation and confidence in front of large audiences of over 70 students.");
+  campusmate = new Experience("Computer Science Tutor", "CampusMate", "June 2020", "Ongoing", "I provide one-to-one Computer Science tutoring at GCSE & A-Level standard. I enjoy this position because it actually helps me to recap topics which I haven't studied in a while. At the same time I am able to help other students to boost their academic success in computer science.");
+  bloc = new Experience("Software Developer", "Bloc Hotel: Gatwick", "September 2018", "November 2018", "Using Android (Java) and speech recognition technology, I developed an application that allowed users to control air conditioning, blinds and the lights in their rooms. This project was a great experience as I was able to use new technology to develop a unique system that has never been created before.");
 
   document.getElementById('experience-js').innerHTML = intergreat.show() + campusmate.show() + bloc.show();
 }
