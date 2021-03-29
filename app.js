@@ -15,7 +15,7 @@ class Project {
     } else {
       this.github = "<a class=\"button\" href=\"" + github + "\">Code on GitHub</a>";
     }
-    if (typeof playstore == "undefined") {
+    if (typeof playstore == "undefined" || playstore == "") {
       this.playstore = "";
     } else {
       this.playstore = "<a class=\"button\" href=\"" + playstore + "\">View on Play Store</a>";
@@ -38,11 +38,11 @@ class Project {
 }
 
 function printProjects() {
-  ghost_writer = new Project("Ghost Writer", "November 2020", "November 2020", ["Kotlin"], ["Artifical Intelligence", "Predictive Text Services"], "Ghost Writer takes an input of lyrics from songs of an artist and analyses them to create a predictive text service using native Kotlin.", "https://github.com/maxc-dev/GhostWriter", "undefined", "5qliYxd");
+  ghost_writer = new Project("Ghost Writer", "November 2020", "November 2020", ["Kotlin"], ["Artifical Intelligence", "Predictive Text Services"], "Ghost Writer takes an input of lyrics from songs of an artist and analyses them to create a predictive text service using native Kotlin.", "https://github.com/maxc-dev/GhostWriter", "", "5qliYxd");
 
   kotlinfx = new Project("KotlinFX", "June 2020", "July 2020", ["Kotlin", "JavaFX", "FXML", "Gradle"], ["Kotlin Framework Creation"], "KotlinFX is a framework which allows users to easily create JavaFX projects which supports the use of Kotlin. KotlinFX is available on GitHub as a template project.", "https://github.com/maxc-dev/KotlinFX");
 
-  moss = new Project("MOSS: Operating System", "March 2020", "June 2020", ["JavaFX", "Maven"], ["Operating System Design", "Complex UI Design"], "MOSS is an operating system simulator complete with advanced algorithms for memory management, process scheduling and disk management. The user interface was a futuristic design inspired by JARVIS from iron man.", "https://github.com/maxc-dev/MOSS", "undefined", "6cnEmEs");
+  moss = new Project("MOSS: Operating System", "March 2020", "June 2020", ["JavaFX", "Maven"], ["Operating System Design", "Complex UI Design"], "MOSS is an operating system simulator complete with advanced algorithms for memory management, process scheduling and disk management. The user interface was a futuristic design inspired by JARVIS from iron man.", "https://github.com/maxc-dev/MOSS", "", "6cnEmEs");
 
   clotheswebsite = new Project("Clothing Website", "November 2019", "January 2020", ["PHP, HTML, CSS, MariaDB"], ["Website Backend", "Database Management"], "This was a website for my Web & Database Systems coursework which I received a 90% (1st) in. The website uses PHP to pull data from a MariaDB Database hosted on a local Wamp server, and then displays it dynamically onto a HTML document.", "https://github.com/maxc-dev/ClothingWebsite");
 
