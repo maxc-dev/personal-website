@@ -23,7 +23,7 @@ class Project {
     if (typeof imgur == "undefined") {
       this.imgur = "";
     } else {
-      this.imgur = "<blockquote class=\"imgur-embed-pub\" lang=\"en\" data-id=\"a/6cnEmEs\"  ><a href=\"//imgur.com/a/" + imgur + "\">" + this.title + " Preview</a></blockquote><script async src=\"//s.imgur.com/min/embed.js\" charset=\"utf-8\"></script>";
+      this.imgur = "<blockquote class=\"imgur-embed-pub\" lang=\"en\" data-id=\"a/" + imgur + "\"  ><a href=\"//imgur.com/a/" + imgur + "\">" + this.title + " Preview</a></blockquote><script async src=\"//s.imgur.com/min/embed.js\" charset=\"utf-8\"></script>";
     }
   }
 
