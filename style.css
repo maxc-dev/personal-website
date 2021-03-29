@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: rgb(20, 20, 20);
   color: rgb(245, 245, 245);
 }
@@ -61,15 +63,14 @@ h4 {
 
 .sub {
   color: rgb(200, 200, 200);
-  font-size: 12px;
-  font-style: italic;
+  font-size: 13px;
 }
 
 .face {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 40%;
 }
 
 .main {
