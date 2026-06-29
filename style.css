@@ -1,46 +1,100 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
-body{
-    background-color: rgb(20, 20, 20);
-    font-family: 'Montserrat', sans-serif;
+:root {
+  --bg: #0f1115;
+  --card: #161922;
+  --fg: #e6e9ef;
+  --muted: #8b93a7;
+  --accent: #e06c3f; /* rust */
+  --border: #232735;
 }
 
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
   width: 100%;
-  padding: 20px;
-}
-
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+  max-width: 540px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  text-align: center;
 }
 
 h1 {
-  letter-spacing: 5px;
-  font-weight: normal;
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+.title {
+  margin: 0 0 0.25rem;
+  color: var(--accent);
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  font-weight: 600;
+}
+
+.degree {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.85rem, 3vw, 0.95rem);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  color: var(--fg);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.links svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+footer {
+  color: var(--muted);
+  font-size: 0.8rem;
 }
